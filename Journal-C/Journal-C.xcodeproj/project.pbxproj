@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D449FF52429734400B6B6C5 /* JMBEntryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D449FF42429734400B6B6C5 /* JMBEntryListTableViewController.m */; };
+		6D4941C724297F0500920E88 /* JMBEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4941C624297F0500920E88 /* JMBEntryDetailViewController.m */; };
 		6DEA7514242951F7000DF1EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA7513242951F7000DF1EA /* AppDelegate.m */; };
 		6DEA7517242951F7000DF1EA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA7516242951F7000DF1EA /* SceneDelegate.m */; };
 		6DEA751D242951F7000DF1EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DEA751B242951F7000DF1EA /* Main.storyboard */; };
 		6DEA751F242951F9000DF1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DEA751E242951F9000DF1EA /* Assets.xcassets */; };
 		6DEA7522242951F9000DF1EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DEA7520242951F9000DF1EA /* LaunchScreen.storyboard */; };
 		6DEA7525242951FA000DF1EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA7524242951FA000DF1EA /* main.m */; };
+		6DEA753324295587000DF1EA /* JMBEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA753224295587000DF1EA /* JMBEntry.m */; };
+		6DEA753624295DF3000DF1EA /* JMBEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA753524295DF3000DF1EA /* JMBEntryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D449FF32429734400B6B6C5 /* JMBEntryListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBEntryListTableViewController.h; sourceTree = "<group>"; };
+		6D449FF42429734400B6B6C5 /* JMBEntryListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBEntryListTableViewController.m; sourceTree = "<group>"; };
+		6D4941C524297F0500920E88 /* JMBEntryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBEntryDetailViewController.h; sourceTree = "<group>"; };
+		6D4941C624297F0500920E88 /* JMBEntryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBEntryDetailViewController.m; sourceTree = "<group>"; };
 		6DEA750F242951F7000DF1EA /* Journal-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEA7512242951F7000DF1EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DEA7513242951F7000DF1EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +34,10 @@
 		6DEA7521242951F9000DF1EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DEA7523242951F9000DF1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DEA7524242951FA000DF1EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6DEA753124295587000DF1EA /* JMBEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBEntry.h; sourceTree = "<group>"; };
+		6DEA753224295587000DF1EA /* JMBEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBEntry.m; sourceTree = "<group>"; };
+		6DEA753424295DF3000DF1EA /* JMBEntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBEntryController.h; sourceTree = "<group>"; };
+		6DEA753524295DF3000DF1EA /* JMBEntryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBEntryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,8 @@
 		6DEA752C2429525A000DF1EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6DEA753124295587000DF1EA /* JMBEntry.h */,
+				6DEA753224295587000DF1EA /* JMBEntry.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +115,8 @@
 		6DEA752E24295269000DF1EA /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DEA753424295DF3000DF1EA /* JMBEntryController.h */,
+				6DEA753524295DF3000DF1EA /* JMBEntryController.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -108,6 +124,10 @@
 		6DEA752F24295273000DF1EA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D449FF32429734400B6B6C5 /* JMBEntryListTableViewController.h */,
+				6D449FF42429734400B6B6C5 /* JMBEntryListTableViewController.m */,
+				6D4941C524297F0500920E88 /* JMBEntryDetailViewController.h */,
+				6D4941C624297F0500920E88 /* JMBEntryDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,7 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D449FF52429734400B6B6C5 /* JMBEntryListTableViewController.m in Sources */,
+				6D4941C724297F0500920E88 /* JMBEntryDetailViewController.m in Sources */,
+				6DEA753324295587000DF1EA /* JMBEntry.m in Sources */,
 				6DEA7514242951F7000DF1EA /* AppDelegate.m in Sources */,
+				6DEA753624295DF3000DF1EA /* JMBEntryController.m in Sources */,
 				6DEA7525242951FA000DF1EA /* main.m in Sources */,
 				6DEA7517242951F7000DF1EA /* SceneDelegate.m in Sources */,
 			);
