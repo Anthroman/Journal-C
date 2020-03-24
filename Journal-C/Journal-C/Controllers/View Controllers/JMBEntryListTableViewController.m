@@ -9,6 +9,7 @@
 #import "JMBEntryListTableViewController.h"
 #import "JMBEntryController.h"
 #import "JMBEntry.h"
+#import "JMBEntryDetailViewController.h"
 
 @interface JMBEntryListTableViewController ()
 
@@ -18,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -30,9 +36,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell" forIndexPath:indexPath];
     
     JMBEntry *entry = JMBEntryController.shared.entries[indexPath.row];
-
+    
     cell.textLabel.text = entry.title;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", entry.timeStamp];
+    
+    // Bunch of code for turning a date into a string (found it online)
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:entry.timeStamp];
     return cell;
 }
 
@@ -41,19 +52,31 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         JMBEntry *entry = JMBEntryController.shared.entries[indexPath.row];
         [JMBEntryController.shared removeEntry:entry];
-
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
-/*
 #pragma mark - Navigation
+// Thanks, Jared...
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    // Identifier
+    if ([segue.identifier isEqualToString: @"toDetailVC"]) {
+        
+        // IndexPath
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        
+        // Destination
+        JMBEntryDetailViewController *detailVC = segue.destinationViewController;
+        
+        // Object - ready
+        JMBEntry *entry = JMBEntryController.shared.entries[indexPath.row];
+        
+        // Object - sent
+        detailVC.entry = entry;
+    }
 }
-*/
 
 @end

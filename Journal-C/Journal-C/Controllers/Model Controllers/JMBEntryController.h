@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JMBEntryController : NSObject
 
 +(JMBEntryController *)shared;
-@property (nonatomic) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray<JMBEntry *> *entries;
 
 -(void)addEntry:(JMBEntry *)entry;
 -(void)removeEntry:(JMBEntry *)entry;

@@ -7,19 +7,21 @@
 //
 
 #import "JMBEntryController.h"
+#import "JMBEntry.h"
 
 @implementation JMBEntryController
 
-+ (JMBEntry *) shared {
-    static JMBEntry *shared = nil;
++ (JMBEntryController *) shared {
+    static JMBEntryController *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [JMBEntry new];
+        shared = [JMBEntryController new];
     });
     return shared;
 }
 
--(instancetype)init {
+-(instancetype)init
+{
     self = [super init];
     
     if (self)
@@ -44,7 +46,4 @@
 {
     [self.entries removeObject:entry];
 }
-
-
-
 @end

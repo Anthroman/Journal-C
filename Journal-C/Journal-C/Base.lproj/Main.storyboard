@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Entry List Table View Controller-->
+        <!--Entries-->
         <scene sceneID="EJh-J0-Aip">
             <objects>
                 <tableViewController id="i3V-VV-BzW" customClass="JMBEntryListTableViewController" sceneMemberID="viewController">
@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1Lm-SL-6Oo" kind="show" identifier="toDetailVC" id="fo9-XY-7JF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,7 +49,7 @@
                             <outlet property="delegate" destination="i3V-VV-BzW" id="jQL-VE-uSj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Jr2-PH-ncO">
+                    <navigationItem key="navigationItem" title="Entries" id="Jr2-PH-ncO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qMS-ZF-wQU">
                             <connections>
                                 <segue destination="1Lm-SL-6Oo" kind="show" id="4R2-R1-EcK"/>
@@ -66,17 +69,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dtk-hL-3uk">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dtk-hL-3uk">
                                 <rect key="frame" x="20" y="123" width="374" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="NFG-cq-AqX"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x4a-CZ-O83">
                                 <rect key="frame" x="20" y="229" width="374" height="445"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.99984721610000005" green="1" blue="0.88245714679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="445" id="Rjz-Go-0Jy"/>
                                     <constraint firstAttribute="width" constant="374" id="qvP-HP-1fQ"/>
@@ -92,6 +92,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="1Lm-SL-6Oo" eventType="touchUpInside" id="2FT-gL-7Ts"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -109,8 +112,16 @@
                         <viewLayoutGuide key="safeArea" id="elv-ge-J6g"/>
                     </view>
                     <navigationItem key="navigationItem" id="auD-XX-Vlp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DnM-gT-Oud"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DnM-gT-Oud">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="1Lm-SL-6Oo" id="29D-ec-n9a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="entryBodyTextView" destination="x4a-CZ-O83" id="mbI-xb-IVe"/>
+                        <outlet property="entryTitleTextField" destination="Dtk-hL-3uk" id="eI1-0l-DXI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvs-aX-ksc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,4 +146,7 @@
             <point key="canvasLocation" x="-39.130434782608695" y="85.714285714285708"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fo9-XY-7JF"/>
+    </inferredMetricsTieBreakers>
 </document>
